@@ -12,7 +12,7 @@ about:
       href: https://github.com/yannsay
     - icon: linkedin
       text: LinkedIn
-      href: https://www.linkedin.com/in/yann-say-liang-fat-83476448/
+      href: https://www.linkedin.com/in/yannsay/
 ---
 
 Small exert of my work with R.
