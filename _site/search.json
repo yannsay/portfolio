@@ -1,47 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "Small exert of my works."
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Intoduction to R framework with IMPACT\n\n\n\n\n\n\ntraining\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\ndata visualization\n\n\n\nTraining given in 2024 to support the roll out of the R framework with IMPACT.\n\n\n\n\n\nMay 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nDu Bois challenge 2024 - week 7\n\n\n\n\n\n\ndubois\n\n\nggplot2\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nWeek 7 of Du Bois challenge 2024.\n\n\n\n\n\nMar 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\ncleaningtools\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata cleaning\n\n\n\ncleaningtools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\naddindicators\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\naddindicators is part of the R framework with IMPACT. The package is a set of tools to add some composite indicators and review them.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\nanalysistools\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata analysis\n\n\n\nanalysistools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\npresentresults\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata visualization\n\n\n\npresentresults is part of the R framework with IMPACT. The package is a set of tools specific for vizualisations.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\nimpacttemplates\n\n\n\n\n\n\nR Studio extension\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nR Studio Templates for new projects to review cleaning and analysis.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\nR cookbook for analysis with IMPACT\n\n\n\n\n\n\nbook\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nThis book aims to be a small collection of codes used across different missions. It contains examples of different problems you can face and offers guidance to solve them. The codes are not exhaustive but just examples. It was written collaboratively.\n\n\n\n\n\nAug 1, 2023\n\n\nR Squad\n\n\n\n\n\n\n\n\n\n\n\nCookbook for CICD with R and GitHub Actions\n\n\n\n\n\n\nbook\n\n\nCICD\n\n\nbookdown\n\n\nGithub Actions\n\n\nR programming\n\n\n\nThis is a collection of GitHub actions and how to set them with usethis(version 2.1.6) that can be found here. When I thought necessary I have added a few additional steps, e.g. when using other services from GitHub or Codecov.\n\n\n\n\n\nMay 1, 2023\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nInvestissement locatif\n\n\n\n\n\n\nshiny\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nAnalyse d’un investissement locatif\n\n\n\n\n\nMar 1, 2023\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/dubois/index.html",
-    "href": "posts/dubois/index.html",
-    "title": "Du Bois challenge 2024 - week 7",
-    "section": "",
-    "text": "Week 7 of Du Bois challenge 2024."
-  },
-  {
     "objectID": "vizualisation.html",
     "href": "vizualisation.html",
     "title": "Data visualization",
@@ -61,5 +19,19 @@
     "title": "Books and Presentations",
     "section": "",
     "text": "Intoduction to R framework with IMPACT\n\n\n\n\n\n\ntraining\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\ndata visualization\n\n\n\nTraining given in 2024 to support the roll out of the R framework with IMPACT.\n\n\n\n\n\nMay 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\nR cookbook for analysis with IMPACT\n\n\n\n\n\n\nbook\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nThis book aims to be a small collection of codes used across different missions. It contains examples of different problems you can face and offers guidance to solve them. The codes are not exhaustive but just examples. It was written collaboratively.\n\n\n\n\n\nAug 1, 2023\n\n\nR Squad\n\n\n\n\n\n\n\n\n\n\n\nCookbook for CICD with R and GitHub Actions\n\n\n\n\n\n\nbook\n\n\nCICD\n\n\nbookdown\n\n\nGithub Actions\n\n\nR programming\n\n\n\nThis is a collection of GitHub actions and how to set them with usethis(version 2.1.6) that can be found here. When I thought necessary I have added a few additional steps, e.g. when using other services from GitHub or Codecov.\n\n\n\n\n\nMay 1, 2023\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "Small exert of my works."
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   }
 ]
