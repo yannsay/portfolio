@@ -1,0 +1,35 @@
+---
+title: "Data visualization"
+listing:
+  contents: 
+    - path: https://yann.shinyapps.io/analyse_investissement_locatif/
+      image: /images/investissement_locatif.png
+      title: "Investissement locatif"
+      author: Yann Say
+      description: "Analyse d'un investissement locatif"
+      date: March 2023 
+      categories: [shiny, data visualization, plotly, R programming]
+      
+    - path: https://yannsay.github.io/dubois-challenge-2024/duboischallenge2024.html
+      image: /images/original-plate-47.jpg
+      title: "Du Bois challenge 2024 - week 7"
+      author: Yann Say
+      description: "Week 7 of Du Bois challenge 2024."
+      date: March 2024
+      categories: [dubois, ggplot2, data visualization, plotly, R programming]
+
+    - path: https://yann.shinyapps.io/explo_insee_scolarite_chomage/
+      image: /images/explo_insee.png
+      title: "Explorateur données INSEE"
+      author: Yann Say
+      description: "Exploration des données d'éducation et de chômage en France."
+      date: Septembre 2021
+      categories: [shiny, ggplot2, data visualization, plotly, R programming]
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---

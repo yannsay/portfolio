@@ -1,0 +1,18 @@
+---
+title: "About"
+image: "https://media.licdn.com/dms/image/D4E03AQG4lPKvjUEQKA/profile-displayphoto-shrink_800_800/0/1686906451346?e=1721260800&v=beta&t=C6XkLOJrngtsr2RilTmZbb5Z-EeDIB_57laeZPkNvHM"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github - Pro
+      href: https://github.com/yannsay-impact
+    - icon: github
+      text: Github
+      href: https://github.com/yannsay
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/yann-say-liang-fat-83476448/
+---
+
+Small exert of my works.

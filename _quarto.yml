@@ -1,0 +1,30 @@
+project:
+  type: website
+
+website:
+  title: "Yann Say"
+  navbar:
+    left: 
+      - href: index.qmd
+        text: Home
+      - href: packages.qmd
+        text: R Packages
+      - href: vizualisation.qmd
+        text: Visualization
+      - href: books.qmd
+        text: Books and presentations
+        
+    right:
+      - icon: github
+        href: https://github.com/yannsay-impact
+      - icon: github
+        href: https://github.com/yannsay
+      - icon: linkedin
+        href: https://www.linkedin.com/in/yann-say-liang-fat-83476448/
+format:
+  html:
+    theme: simplex
+    css: styles.css
+
+editor: visual
+

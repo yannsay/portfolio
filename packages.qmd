@@ -1,0 +1,51 @@
+---
+title: "Packages"
+listing:
+  contents: 
+    - path: https://github.com/yannsay-impact/cleaningtools
+      image:
+      title: "cleaningtools"
+      author: Yann Say, Mehedi Khan
+      description: "cleaningtools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning."
+      date: January 2024
+      categories: [package, R programming, data cleaning]
+      
+    - path: https://github.com/yannsay-impact/addindicators
+      image:
+      title: "addindicators"
+      author: Yann Say, Mehedi Khan
+      description: "addindicators is part of the R framework with IMPACT. The package is a set of tools to add some composite indicators and review them."
+      date: January 2024
+      categories: [package, R programming, data cleaning, data analysis]
+      
+    - path: https://github.com/yannsay-impact/analysistools
+      image:
+      title: "analysistools"
+      author: Yann Say, Mehedi Khan
+      description: "analysistools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning."
+      date: January 2024
+      categories: [package, R programming, data analysis]
+      
+    - path: https://github.com/yannsay-impact/presentresults
+      image:
+      title: "presentresults"
+      author: Yann Say, Mehedi Khan
+      description: "presentresults is part of the R framework with IMPACT. The package is a set of tools specific for vizualisations."
+      date: January 2024
+      categories: [package, R programming, data visualization]
+      
+    - path: https://github.com/yannsay-impact/impacttemplates
+      image:
+      title: "impacttemplates"
+      author: Yann Say
+      description: "R Studio Templates for new projects to review cleaning and analysis."
+      date: January 2024
+      categories: [R Studio extension, R programming, data cleaning, data analysis]
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
