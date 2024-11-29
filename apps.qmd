@@ -1,5 +1,5 @@
 ---
-title: "Data visualization"
+title: "Data applications - projects"
 listing:
   contents: 
     - path: https://yann.shinyapps.io/analyse_investissement_locatif/

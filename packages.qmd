@@ -2,6 +2,14 @@
 title: "Packages"
 listing:
   contents: 
+    - path: https://github.com/yannsay/gtopenxlsx/
+      image:
+      title: "gtopenxlsx"
+      author: Yann Say
+      description: "API to export GreatTables from gt to Excel."
+      date: October 2024
+      categories: [package, R programming, visualization]
+      
     - path: https://github.com/yannsay-impact/cleaningtools
       image:
       title: "cleaningtools"

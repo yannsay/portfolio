@@ -10,5 +10,9 @@
   {
     "listing": "/books.html",
     "items": []
+  },
+  {
+    "listing": "/apps.html",
+    "items": []
   }
 ]

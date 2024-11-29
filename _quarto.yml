@@ -7,10 +7,10 @@ website:
     left: 
       - href: index.qmd
         text: Home
+      - href: apps.qmd
+        text: Data applications - projects
       - href: packages.qmd
         text: R Packages
-      - href: vizualisation.qmd
-        text: Visualization
       - href: books.qmd
         text: Books and presentations
         

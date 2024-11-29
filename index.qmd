@@ -1,6 +1,8 @@
 ---
 title: "About"
-image: "https://media.licdn.com/dms/image/D4E03AQG4lPKvjUEQKA/profile-displayphoto-shrink_800_800/0/1686906451346?e=1721260800&v=beta&t=C6XkLOJrngtsr2RilTmZbb5Z-EeDIB_57laeZPkNvHM"
+image: "images/photo.jpg"
+
+
 about:
   template: jolla
   links:
