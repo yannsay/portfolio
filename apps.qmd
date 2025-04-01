@@ -25,6 +25,22 @@ listing:
       description: "Exploration des données d'éducation et de chômage en France."
       date: Septembre 2021
       categories: [shiny, ggplot2, data visualization, plotly, R programming]
+
+    - path: https://gitlab.com/opendata.ch/openparldatach/api-flask
+      image: /images/open_parl_data.png
+      title: "Open Parl Data - API"
+      author: Yann Say
+      description: "REST API to access Open Parlementary Data in Switzerland"
+      date: February 2025
+      categories: [python, flask, docker, PostgreSQL] 
+      
+    - path: https://votes-nominaux-geneve.streamlit.app/
+      image: /images/votes_nominaux_gcg.png
+      title: "Votes Nominaux du Grand Conseil de Genève"
+      author: Yann Say
+      description: "Explorateurs des votes nominaux du Grand Conseil de Genève"
+      date: March 2025
+      categories: [python, streamlit, data visualization]
   sort: "date desc"
   type: default
   categories: true
