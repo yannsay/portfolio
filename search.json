@@ -1,10 +1,24 @@
 [
   {
-    "objectID": "books.html",
-    "href": "books.html",
-    "title": "Books and Presentations",
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "Packages",
     "section": "",
-    "text": "Intoduction to R framework with IMPACT\n\n\n\n\n\n\ntraining\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\ndata visualization\n\n\n\nTraining given in 2024 to support the roll out of the R framework with IMPACT.\n\n\n\n\n\nMay 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\nR cookbook for analysis with IMPACT\n\n\n\n\n\n\nbook\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nThis book aims to be a small collection of codes used across different missions. It contains examples of different problems you can face and offers guidance to solve them. The codes are not exhaustive but just examples. It was written collaboratively.\n\n\n\n\n\nAug 1, 2023\n\n\nR Squad\n\n\n\n\n\n\n\n\n\n\n\nCookbook for CICD with R and GitHub Actions\n\n\n\n\n\n\nbook\n\n\nCICD\n\n\nbookdown\n\n\nGithub Actions\n\n\nR programming\n\n\n\nThis is a collection of GitHub actions and how to set them with usethis(version 2.1.6) that can be found here. When I thought necessary I have added a few additional steps, e.g. when using other services from GitHub or Codecov.\n\n\n\n\n\nMay 1, 2023\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
+    "text": "gtopenxlsx\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\nvisualization\n\n\n\nAPI to export GreatTables from gt to Excel.\n\n\n\n\n\nOct 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\ncleaningtools\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata cleaning\n\n\n\ncleaningtools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\naddindicators\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\naddindicators is part of the R framework with IMPACT. The package is a set of tools to add some composite indicators and review them.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\nanalysistools\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata analysis\n\n\n\nanalysistools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\npresentresults\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata visualization\n\n\n\npresentresults is part of the R framework with IMPACT. The package is a set of tools specific for vizualisations.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\nimpacttemplates\n\n\n\n\n\n\nR Studio extension\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nR Studio Templates for new projects to review cleaning and analysis.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "apps.html",
+    "href": "apps.html",
+    "title": "Data applications - projects",
+    "section": "",
+    "text": "Votes Nominaux du Grand Conseil de Genève\n\n\n\n\n\n\npython\n\n\nstreamlit\n\n\ndata visualization\n\n\n\nExplorateurs des votes nominaux du Grand Conseil de Genève\n\n\n\n\n\nMar 1, 2025\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nOpen Parl Data - API\n\n\n\n\n\n\npython\n\n\nflask\n\n\ndocker\n\n\nPostgreSQL\n\n\n\nREST API to access Open Parlementary Data in Switzerland\n\n\n\n\n\nFeb 1, 2025\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nDu Bois challenge 2024 - week 7\n\n\n\n\n\n\ndubois\n\n\nggplot2\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nWeek 7 of Du Bois challenge 2024.\n\n\n\n\n\nMar 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nInvestissement locatif\n\n\n\n\n\n\nshiny\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nAnalyse d’un investissement locatif\n\n\n\n\n\nMar 1, 2023\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nExplorateur données INSEE\n\n\n\n\n\n\nshiny\n\n\nggplot2\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nExploration des données d’éducation et de chômage en France.\n\n\n\n\n\nSep 1, 2021\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,24 +28,10 @@
     "text": "Small exert of my work with R."
   },
   {
-    "objectID": "packages.html",
-    "href": "packages.html",
-    "title": "Packages",
+    "objectID": "books.html",
+    "href": "books.html",
+    "title": "Books and Presentations",
     "section": "",
-    "text": "gtopenxlsx\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\nvisualization\n\n\n\nAPI to export GreatTables from gt to Excel.\n\n\n\n\n\nOct 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\ncleaningtools\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata cleaning\n\n\n\ncleaningtools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\naddindicators\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\naddindicators is part of the R framework with IMPACT. The package is a set of tools to add some composite indicators and review them.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\nanalysistools\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata analysis\n\n\n\nanalysistools is part of the R framework with IMPACT. The package is a set of tools specific for cleaning.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\npresentresults\n\n\n\n\n\n\npackage\n\n\nR programming\n\n\ndata visualization\n\n\n\npresentresults is part of the R framework with IMPACT. The package is a set of tools specific for vizualisations.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say, Mehedi Khan\n\n\n\n\n\n\n\n\n\n\n\nimpacttemplates\n\n\n\n\n\n\nR Studio extension\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nR Studio Templates for new projects to review cleaning and analysis.\n\n\n\n\n\nJan 1, 2024\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "apps.html",
-    "href": "apps.html",
-    "title": "Data applications - projects",
-    "section": "",
-    "text": "Du Bois challenge 2024 - week 7\n\n\n\n\n\n\ndubois\n\n\nggplot2\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nWeek 7 of Du Bois challenge 2024.\n\n\n\n\n\nMar 1, 2024\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nInvestissement locatif\n\n\n\n\n\n\nshiny\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nAnalyse d’un investissement locatif\n\n\n\n\n\nMar 1, 2023\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\n\nExplorateur données INSEE\n\n\n\n\n\n\nshiny\n\n\nggplot2\n\n\ndata visualization\n\n\nplotly\n\n\nR programming\n\n\n\nExploration des données d’éducation et de chômage en France.\n\n\n\n\n\nSep 1, 2021\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Intoduction to R framework with IMPACT\n\n\n\n\n\n\ntraining\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\ndata visualization\n\n\nquarto\n\n\ngithub actions\n\n\nlms\n\n\n\nTraining material for LMS plateform\n\n\n\n\n\nMar 1, 2025\n\n\nYann Say\n\n\n\n\n\n\n\n\n\n\n\nR cookbook for analysis with IMPACT\n\n\n\n\n\n\nbook\n\n\nR programming\n\n\ndata cleaning\n\n\ndata analysis\n\n\n\nThis book aims to be a small collection of codes used across different missions. It contains examples of different problems you can face and offers guidance to solve them. The codes are not exhaustive but just examples. It was written collaboratively.\n\n\n\n\n\nAug 1, 2023\n\n\nR Squad\n\n\n\n\n\n\n\n\n\n\n\nCookbook for CICD with R and GitHub Actions\n\n\n\n\n\n\nbook\n\n\nCICD\n\n\nbookdown\n\n\nGithub Actions\n\n\nR programming\n\n\n\nThis is a collection of GitHub actions and how to set them with usethis(version 2.1.6) that can be found here. When I thought necessary I have added a few additional steps, e.g. when using other services from GitHub or Codecov.\n\n\n\n\n\nMay 1, 2023\n\n\nYann Say\n\n\n\n\n\n\nNo matching items"
   }
 ]
