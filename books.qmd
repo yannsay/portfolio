@@ -2,7 +2,7 @@
 title: "Books and Presentations"
 listing:
   contents: 
-    - path: https://yannsay-impact.github.io/CookbookforCICDwithR/
+    - path: https://yannsay.github.io/CookbookforCICDwithR/
       image:
       title: "Cookbook for CICD with R and GitHub Actions"
       author: Yann Say
