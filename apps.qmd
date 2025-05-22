@@ -41,6 +41,14 @@ listing:
       description: "Explorateurs des votes nominaux du Grand Conseil de Genève"
       date: March 2025
       categories: [python, streamlit, data visualization]
+      
+    - path: https://yann.shinyapps.io/temperaturelacleman/
+      image: /images/temperaturelacleman.png
+      title: "Température du Lac Léman"
+      author: Yann Say
+      description: "App pour apnéistes à Genève. Visualisation de la température des profondeur du lac Léman avec les données de l'API Alplakes. Application made for mobile phones."
+      date: March 2025
+      categories: [R programming, shiny, gt, data visualization]
   sort: "date desc"
   type: default
   categories: true
