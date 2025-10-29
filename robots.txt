@@ -1,1 +1,1 @@
-Sitemap: https://www.yann-say.me/sitemap.xml
+Sitemap: https://yannsay.github.io/portfolio/sitemap.xml
