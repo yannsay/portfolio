@@ -26,3 +26,6 @@ format:
     theme: simplex
     css: styles.css
 
+execute:
+  freeze: auto
+
