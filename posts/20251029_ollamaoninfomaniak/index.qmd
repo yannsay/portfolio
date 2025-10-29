@@ -1,0 +1,151 @@
+---
+title: "How to create an Ollama instance on Infomaniak Public Cloud"
+author: "Yann Say"
+date: "2025-10-29"
+categories: [Cloud computing, llm, Ollama, Infomaniak]
+image: ollama.png
+---
+
+## Intro
+
+This is a small walktrought on how to set up a Ollama instance on Infomaniak Public Cloud. I have managed to create that instance with the help of [solve.it.ai](https://solve.it.com/){target=_blank}. 
+Picture from https://ollama.com/
+
+## Step by step
+
+**1. Create Instance** *from Infomaniak - Horizon websites*
+
+-   Choose or create Public cloud project on Infomaniak.
+-   Log in Horizon
+-   Launch an instance
+    -   Ubuntu 24.04 LTS
+    -   a4-ram8-disk50-perf1 (or larger)
+    -   Network: ext-net1
+    -   Create SSH key pair, save as .pem file (example: ollama-infomaniak.pem)
+-   Note down the IP of the server (it will be referred as `SERVER_IP`)
+
+::: {.callout-tip collapse="true"}
+## Size and Network
+
+**a4-ram8-disk50-perf1**:
+
+-   4 CPUs
+-   8 GB RAM (enough for smaller models like Llama 3.2 3B, Phi, Mistral 7B)
+-   50 GB disk space (enough for Ollama and several models)
+
+**ext-net1** : this is the external network that will give your instance internet access and a public IP address (which you'll need to connect to it and use Ollama).
+:::
+
+**2. Configure Security** *from Horizon website*
+
+-   Add security group rules (Ingress):
+
+    -   Port 22 (SSH): 0.0.0.0/0
+    -   Port 11434 (Ollama): LOCAL_IP/32
+
+::: {.callout-tip collapse="true"}
+## To find `LOCAL_IP` *from local computer*
+
+``` bash
+curl ifconfig.me
+```
+:::
+
+**3. Connect to Server** *from local computer*
+
+``` bash
+chmod 600 ollama-infomaniak.pem
+ssh -i ollama-infomaniak.pem ubuntu@SERVER_IP
+```
+
+::: {.callout-tip collapse="true"}
+## Bash explanation
+
+**chmod 600 ollama-infomaniak.pem:**
+
+-   `chmod` changes file permissions (who can read/write/execute a file)
+-   `600` means only YOU can read and write the file, nobody else can access it
+-   SSH requires this for security - if your private key is too "open," SSH will refuse to use it to protect you
+
+**ssh -i /path/to/ollama-infomaniak.pem ubuntu\@SERVER_IP:**
+
+-   `ssh` is the command to connect securely to a remote server
+-   `-i` tells SSH which identity/key file to use for authentication
+-   `ubuntu` is the username on the remote server (Ubuntu images typically use "ubuntu" as the default user)
+-   `@SERVER_IP` is the IP address of your server
+:::
+
+**4. Install Ollama** *from server*
+
+``` bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+**5. Configure Remote Access** *from server*
+
+-   Set up remote access so only you can access
+
+``` bash
+sudo systemctl edit ollama
+```
+
+Add:
+
+```         
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+```
+
+-   And re-load the config
+
+``` bash
+sudo systemctl daemon-reload
+```
+
+-   Re-start the server
+
+``` bash
+sudo systemctl restart ollama
+```
+
+::: {.callout-tip collapse="true"}
+## Nano commands
+
+-   **Ctrl+O** (to save)
+-   **Enter** (to confirm)
+-   **Ctrl+X** (to exit)
+:::
+
+**6. Test Connection** *from local computer*
+
+``` bash
+curl http://SERVER_IP:11434
+```
+
+**7. Use in Python**
+
+``` python
+import ollama
+client = ollama.Client(host='http://SERVER_IP:11434')
+
+# For conversations with memory
+messages = []
+messages.append({'role': 'user', 'content': 'Hello'})
+response = client.chat(model='llama3.2', messages=messages)
+messages.append({'role': 'assistant', 'content': response['message']['content']})
+```
+
+::: {.callout-tip collapse="true"}
+## Install your model on the server
+
+You need to install the model you are using in the server or you will get an error.
+:::
+
+**8. Stop Instance When Done** *on Horizon website*
+
+If you want to stop the instance:
+
+-   Find your instance
+-   Click "Shut off instance"
+
+*Note: IP may change when you restart it*

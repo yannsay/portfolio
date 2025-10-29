@@ -38,7 +38,7 @@ listing:
       image: /images/votes_nominaux_gcg.png
       title: "Votes Nominaux du Grand Conseil de Genève"
       author: Yann Say
-      description: "Explorateurs des votes nominaux du Grand Conseil de Genève"
+      description: "Explorateur des votes nominaux du Grand Conseil de Genève"
       date: March 2025
       categories: [python, streamlit, data visualization]
       
@@ -49,6 +49,15 @@ listing:
       description: "App pour apnéistes à Genève. Visualisation de la température des profondeur du lac Léman avec les données de l'API Alplakes. Application made for mobile phones."
       date: March 2025
       categories: [R programming, shiny, gt, data visualization]
+
+    - path: https://ggc-votes.yann-say.me/
+      image: images/ggc-votes.png
+      title: "Votes Nominaux du Grand Conseil de Genève v2"
+      author: Yann Say
+      description: "Nouvelle interface pour mon explorateur des votes nominaux du Grand Conseil de Genève avec Django."
+      date: June 2025
+      categories: [python, django, data visualization]
+
   sort: "date desc"
   type: default
   categories: true

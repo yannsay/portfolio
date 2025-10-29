@@ -1,0 +1,20 @@
+---
+title: "About"
+image: "images/photo.jpg"
+
+
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github - Pro
+      href: https://github.com/yannsay-impact
+    - icon: github
+      text: Github
+      href: https://github.com/yannsay
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/yannsay/
+---
+
+Small exert of my work with.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data applications - projects – Yann Say</title>
+<title>About – Yann Say</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,14 +30,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -70,73 +67,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-image','listing-title','listing-author','listing-description','listing-date','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-image","listing-title","listing-author","listing-description","listing-date","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -157,7 +96,7 @@ window.Quarto = {
 <span class="menu-text">My Writings</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./apps.html" aria-current="page"> 
+    <a class="nav-link" href="./apps.html"> 
 <span class="menu-text">Data applications - projects</span></a>
   </li>  
   <li class="nav-item">
@@ -165,7 +104,7 @@ window.Quarto = {
 <span class="menu-text">R Packages</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About me</span></a>
   </li>  
 </ul>
@@ -193,305 +132,44 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Data applications - projects</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta column-page-left">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="ZGF0YSUyMHZpc3VhbGl6YXRpb24=">data visualization <span class="quarto-category-count">(6)</span></div><div class="category" data-category="ZGphbmdv">django <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZG9ja2Vy">docker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZHVib2lz">dubois <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Zmxhc2s=">flask <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2dwbG90Mg==">ggplot2 <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z3Q=">gt <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cGxvdGx5">plotly <span class="quarto-category-count">(3)</span></div><div class="category" data-category="UG9zdGdyZVNRTA==">PostgreSQL <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(3)</span></div><div class="category" data-category="UiUyMHByb2dyYW1taW5n">R programming <span class="quarto-category-count">(4)</span></div><div class="category" data-category="c2hpbnk=">shiny <span class="quarto-category-count">(3)</span></div><div class="category" data-category="c3RyZWFtbGl0">streamlit <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
-
-
-
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="cHl0aG9uJTJDZGphbmdvJTJDZGF0YSUyMHZpc3VhbGl6YXRpb24=" data-listing-date-sort="1748728800000">
-<div class="thumbnail"><a href="https://ggc-votes.yann-say.me/" class="no-external">
-
-<img loading="lazy" src="images/ggc-votes.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://ggc-votes.yann-say.me/" class="no-external">Votes Nominaux du Grand Conseil de Genève v2</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGphbmdv'); return false;">django</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpc3VhbGl6YXRpb24='); return false;">data visualization</div>
-
+<div class="quarto-about-jolla">
+  <img src="images/photo.jpg" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">About</h1>
 </div>
-<div class="delink listing-description"><a href="https://ggc-votes.yann-say.me/" class="no-external">
-<p>Nouvelle interface pour mon explorateur des votes nominaux du Grand Conseil de Genève avec Django.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://ggc-votes.yann-say.me/" class="no-external">
-<div class="listing-date">
-Jun 1, 2025
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
+<div class="quarto-title-meta">
+  </div>
+</header><main class="content" id="quarto-document-content">
+<p>Small exert of my work with.</p>
+
+
+</main> 
+  <hr class="about-sep">
+   <div class="about-links">
+  <a href="https://github.com/yannsay-impact" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github - Pro</span>
+  </a>
+  <a href="https://github.com/yannsay" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+  <a href="https://www.linkedin.com/in/yannsay/" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="cHl0aG9uJTJDc3RyZWFtbGl0JTJDZGF0YSUyMHZpc3VhbGl6YXRpb24=" data-listing-date-sort="1740783600000">
-<div class="thumbnail"><a href="https://votes-nominaux-geneve.streamlit.app/" class="no-external">
-
-<img loading="lazy" src="./images/votes_nominaux_gcg.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://votes-nominaux-geneve.streamlit.app/" class="no-external">Votes Nominaux du Grand Conseil de Genève</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c3RyZWFtbGl0'); return false;">streamlit</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpc3VhbGl6YXRpb24='); return false;">data visualization</div>
-
-</div>
-<div class="delink listing-description"><a href="https://votes-nominaux-geneve.streamlit.app/" class="no-external">
-<p>Explorateur des votes nominaux du Grand Conseil de Genève</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://votes-nominaux-geneve.streamlit.app/" class="no-external">
-<div class="listing-date">
-Mar 1, 2025
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UiUyMHByb2dyYW1taW5nJTJDc2hpbnklMkNndCUyQ2RhdGElMjB2aXN1YWxpemF0aW9u" data-listing-date-sort="1740783600000">
-<div class="thumbnail"><a href="https://yann.shinyapps.io/temperaturelacleman/" class="no-external">
-
-<img loading="lazy" src="./images/temperaturelacleman.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://yann.shinyapps.io/temperaturelacleman/" class="no-external">Température du Lac Léman</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UiUyMHByb2dyYW1taW5n'); return false;">R programming</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2hpbnk='); return false;">shiny</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z3Q='); return false;">gt</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpc3VhbGl6YXRpb24='); return false;">data visualization</div>
-
-</div>
-<div class="delink listing-description"><a href="https://yann.shinyapps.io/temperaturelacleman/" class="no-external">
-<p>App pour apnéistes à Genève. Visualisation de la température des profondeur du lac Léman avec les données de l’API Alplakes. Application made for mobile phones.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://yann.shinyapps.io/temperaturelacleman/" class="no-external">
-<div class="listing-date">
-Mar 1, 2025
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="cHl0aG9uJTJDZmxhc2slMkNkb2NrZXIlMkNQb3N0Z3JlU1FM" data-listing-date-sort="1738364400000">
-<div class="thumbnail"><a href="https://gitlab.com/opendata.ch/openparldatach/api-flask" class="no-external">
-
-<img loading="lazy" src="./images/open_parl_data.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://gitlab.com/opendata.ch/openparldatach/api-flask" class="no-external">Open Parl Data - API</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">python</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Zmxhc2s='); return false;">flask</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZG9ja2Vy'); return false;">docker</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UG9zdGdyZVNRTA=='); return false;">PostgreSQL</div>
-
-</div>
-<div class="delink listing-description"><a href="https://gitlab.com/opendata.ch/openparldatach/api-flask" class="no-external">
-<p>REST API to access Open Parlementary Data in Switzerland</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://gitlab.com/opendata.ch/openparldatach/api-flask" class="no-external">
-<div class="listing-date">
-Feb 1, 2025
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="ZHVib2lzJTJDZ2dwbG90MiUyQ2RhdGElMjB2aXN1YWxpemF0aW9uJTJDcGxvdGx5JTJDUiUyMHByb2dyYW1taW5n" data-listing-date-sort="1709247600000">
-<div class="thumbnail"><a href="https://yannsay.github.io/dubois-challenge-2024/duboischallenge2024.html" class="no-external">
-
-<img loading="lazy" src="./images/original-plate-47.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://yannsay.github.io/dubois-challenge-2024/duboischallenge2024.html" class="no-external">Du Bois challenge 2024 - week 7</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZHVib2lz'); return false;">dubois</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpc3VhbGl6YXRpb24='); return false;">data visualization</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGxvdGx5'); return false;">plotly</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UiUyMHByb2dyYW1taW5n'); return false;">R programming</div>
-
-</div>
-<div class="delink listing-description"><a href="https://yannsay.github.io/dubois-challenge-2024/duboischallenge2024.html" class="no-external">
-<p>Week 7 of Du Bois challenge 2024.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://yannsay.github.io/dubois-challenge-2024/duboischallenge2024.html" class="no-external">
-<div class="listing-date">
-Mar 1, 2024
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="c2hpbnklMkNkYXRhJTIwdmlzdWFsaXphdGlvbiUyQ3Bsb3RseSUyQ1IlMjBwcm9ncmFtbWluZw==" data-listing-date-sort="1677625200000">
-<div class="thumbnail"><a href="https://yann.shinyapps.io/analyse_investissement_locatif/" class="no-external">
-
-<img loading="lazy" src="./images/investissement_locatif.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://yann.shinyapps.io/analyse_investissement_locatif/" class="no-external">Investissement locatif</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2hpbnk='); return false;">shiny</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpc3VhbGl6YXRpb24='); return false;">data visualization</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGxvdGx5'); return false;">plotly</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UiUyMHByb2dyYW1taW5n'); return false;">R programming</div>
-
-</div>
-<div class="delink listing-description"><a href="https://yann.shinyapps.io/analyse_investissement_locatif/" class="no-external">
-<p>Analyse d’un investissement locatif</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://yann.shinyapps.io/analyse_investissement_locatif/" class="no-external">
-<div class="listing-date">
-Mar 1, 2023
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="c2hpbnklMkNnZ3Bsb3QyJTJDZGF0YSUyMHZpc3VhbGl6YXRpb24lMkNwbG90bHklMkNSJTIwcHJvZ3JhbW1pbmc=" data-listing-date-sort="1630447200000">
-<div class="thumbnail"><a href="https://yann.shinyapps.io/explo_insee_scolarite_chomage/" class="no-external">
-
-<img loading="lazy" src="./images/explo_insee.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="https://yann.shinyapps.io/explo_insee_scolarite_chomage/" class="no-external">Explorateur données INSEE</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('c2hpbnk='); return false;">shiny</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpc3VhbGl6YXRpb24='); return false;">data visualization</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cGxvdGx5'); return false;">plotly</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UiUyMHByb2dyYW1taW5n'); return false;">R programming</div>
-
-</div>
-<div class="delink listing-description"><a href="https://yann.shinyapps.io/explo_insee_scolarite_chomage/" class="no-external">
-<p>Exploration des données d’éducation et de chômage en France.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="https://yann.shinyapps.io/explo_insee_scolarite_chomage/" class="no-external">
-<div class="listing-date">
-Sep 1, 2021
-</div>
-<div class="listing-author">
-Yann Say
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
