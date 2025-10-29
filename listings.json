@@ -1,14 +1,16 @@
 [
   {
-    "listing": "/books.html",
+    "listing": "/apps.html",
     "items": []
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/20251029_ollamaoninfomaniak/index.html"
+    ]
   },
   {
     "listing": "/packages.html",
-    "items": []
-  },
-  {
-    "listing": "/apps.html",
     "items": []
   }
 ]
