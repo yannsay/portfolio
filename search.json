@@ -46,7 +46,7 @@
     "href": "posts/20260319_langsmith_googledrive/index.html",
     "title": "How I Turned Stakeholder Feedback into an LLM Evaluation Dataset",
     "section": "",
-    "text": "Our dev team shipped a working prototype fast. But stakeholders aren’t satisfied — the LLM isn’t producing meaningful output. I believe we need an evaluation framework, i.e. three things: a dataset that reflects what stakeholders expect, indicators that define “good,” and a pipeline to measure whether changes help or hurt. This post focuses on the first — how I created the dataset.\nHere is what I did:\ngraph LR\n    A[Langsmith Traces] --&gt; B[Google Docs Annotation]\n    B --&gt; C[Langsmith Dataset]\n    \n    style A fill:#1C3C3C,color:#fff\n    style B fill:#4688F4,color:#fff\n    style C fill:#1C3C3C,color:#fff\n    linkStyle default stroke:#333,stroke-width:2px"
+    "text": "Disclosure: This post was written with the help of SolveitAI (Claude) for structuring and editing.\nOur dev team shipped a working prototype fast. But stakeholders aren’t satisfied — the LLM isn’t producing meaningful output. I believe we need an evaluation framework, i.e. three things: a dataset that reflects what stakeholders expect, indicators that define “good,” and a pipeline to measure whether changes help or hurt. This post focuses on the first — how I created the dataset.\nHere is what I did:\ngraph LR\n    A[Langsmith Traces] --&gt; B[Google Docs Annotation]\n    B --&gt; C[Langsmith Dataset]\n    \n    style A fill:#1C3C3C,color:#fff\n    style B fill:#4688F4,color:#fff\n    style C fill:#1C3C3C,color:#fff\n    linkStyle default stroke:#333,stroke-width:2px"
   },
   {
     "objectID": "posts/20260319_langsmith_googledrive/index.html#why-langsmith-traces",
