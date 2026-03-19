@@ -1,0 +1,78 @@
+---
+title: "How I Turned Stakeholder Feedback into an LLM Evaluation Dataset"
+subtitle: "Using Langsmith, Google Docs, and Code Claude"
+author: "Yann Say"
+date: "2026-03-19"
+categories: [LLM, evaluation, Langsmith, dataset, AI development, Google Workspace]
+description: "How I built an LLM evaluation dataset by combining Langsmith traces, Google Docs annotations, and Code Claude — with minimal stakeholder effort."
+image: langsmith_googledrive.png
+---
+
+Our dev team shipped a working prototype fast. But stakeholders aren't satisfied — the LLM isn't producing meaningful output. I believe we need an evaluation framework, i.e. three things: a dataset that reflects what stakeholders expect, indicators that define "good," and a pipeline to measure whether changes help or hurt. This post focuses on the first — how I created the dataset.
+
+Here is what I did:
+
+
+```{mermaid}
+graph LR
+    A[Langsmith Traces] --> B[Google Docs Annotation]
+    B --> C[Langsmith Dataset]
+    
+    style A fill:#1C3C3C,color:#fff
+    style B fill:#4688F4,color:#fff
+    style C fill:#1C3C3C,color:#fff
+    linkStyle default stroke:#333,stroke-width:2px
+
+```
+
+
+1. Collect real inputs from Langsmith traces
+2. Get stakeholders to annotate them in Google Docs
+3. Convert annotations into a Langsmith dataset
+
+## Why Langsmith traces?
+
+I had pushed to collect traces from the very beginning, the traces logged in Langsmith. I did not need to create LLM inputs, a few of us were testing the application, we had examples already existing from our tests. In addition, we are familiar with the data that is used as we are the ones who created it. So I could collect them from Langsmith, sort them and turn them into a meaningful format.
+
+## Why Google Docs?
+
+For annotation, I thought the easiest would be to have a document where stakeholders could use the highlighting tool to show what is the relevant information. That’s it. This is a familiar workflow, get a document, highlight. Stakeholder time is very scarce, "You have 10 minutes? I'll take it — highlight 5 texts for me." I was trying to minimise overhead e.g. avoid deploying a stand-alone app, sharing access, data, etc. I want annotation — I don't want to build an app. We are using Google Drive, it was natural to be sharing a folder with docs to be annotated, one doc per input. They can read, highlight, change the name to done or move the file.
+
+Here's the full workflow. I used Code Claude with Langsmith SDK and Google Workspace CLI for every step except the annotation itself.
+
+### Data preparation:
+
+1. Download traces from Langsmith
+2. Filter the traces
+3. Extract the information - inputs from the traces
+4. Create a docx
+5. Upload to Google Drive
+
+### Annotation:
+
+6. *Stakeholders are annotating* -- Manual step
+
+### Building the dataset:
+
+7. Download annotated files
+8. Extract the information - highlighted text from the annotated docs
+9. Create a dataset
+10. Upload the dataset to Langsmith
+
+## Results
+
+- The dataset was created, from 20 annotated docs, I reduced to 12 after removing duplicates. But the pipeline has been set up for 2 weeks now, I am adding a second set of annotations to it. Small but a start.
+- Stakeholders only had to highlight text. No creating inputs, no copying into docs, no uploading — I handled all of that through the pipeline.
+- One surprise using Google Docs I had not thought of was to take advantage of all the features from Google Drive, in particular comments and tagging to ease communication. As it was a natural workflow for the stakeholders, they incorporated their common practice.
+- Code Claude let me focus on the outcomes, not learning Langsmith SDK or Google Workspace CLI.
+
+## What made it work
+
+1. Collecting traces from the beginning. Without them, I'd have had to create test inputs from scratch — but we already had real ones.
+2. Meet people where they are: using Google Drive meant zero onboarding — stakeholders already knew the tool and the workflow. No need to develop a new app.
+3. Iterative process: I started step by step, with one doc. I was able to review each step. Repeat with a couple, and then a batch.
+4. Team scaffolding: while I focused on creating the dataset, it is just a piece in our journey. It would not have been possible without the team work, i.e. the dev team to build the app and the stakeholders to be involved.
+
+
+The dataset is only one piece of the evaluation framework. On its own it's not enough — indicators and evaluators are the next step.
+
