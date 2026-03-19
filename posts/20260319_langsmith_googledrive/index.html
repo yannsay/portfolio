@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yann Say">
-<meta name="dcterms.date" content="2025-10-29">
+<meta name="dcterms.date" content="2026-03-19">
+<meta name="description" content="How I built an LLM evaluation dataset by combining Langsmith traces, Google Docs annotations, and Code Claude — with minimal stakeholder effort.">
 
-<title>How to create an Ollama instance on Infomaniak Public Cloud – Yann Say</title>
+<title>How I Turned Stakeholder Feedback into an LLM Evaluation Dataset – Yann Say</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -105,6 +71,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -171,12 +140,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">How to create an Ollama instance on Infomaniak Public Cloud</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Cloud computing</div>
-                <div class="quarto-category">llm</div>
-                <div class="quarto-category">Ollama</div>
-                <div class="quarto-category">Infomaniak</div>
+      <h1 class="title">How I Turned Stakeholder Feedback into an LLM Evaluation Dataset</h1>
+            <p class="subtitle lead">Using Langsmith, Google Docs, and Code Claude</p>
+                  <div>
+        <div class="description">
+          How I built an LLM evaluation dataset by combining Langsmith traces, Google Docs annotations, and Code Claude — with minimal stakeholder effort.
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLM</div>
+                <div class="quarto-category">evaluation</div>
+                <div class="quarto-category">Langsmith</div>
+                <div class="quarto-category">dataset</div>
+                <div class="quarto-category">AI development</div>
+                <div class="quarto-category">Google Workspace</div>
               </div>
                   </div>
   </div>
@@ -194,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 29, 2025</p>
+        <p class="date">March 19, 2026</p>
       </div>
     </div>
     
@@ -213,174 +190,85 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="intro" class="level2">
-<h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>This is a small walktrought on how to set up a Ollama instance on Infomaniak Public Cloud. I have managed to create that instance with the help of <a href="https://solve.it.com/" target="_blank">solve.it.ai</a>. Picture from https://ollama.com/</p>
+<p>Our dev team shipped a working prototype fast. But stakeholders aren’t satisfied — the LLM isn’t producing meaningful output. I believe we need an evaluation framework, i.e.&nbsp;three things: a dataset that reflects what stakeholders expect, indicators that define “good,” and a pipeline to measure whether changes help or hurt. This post focuses on the first — how I created the dataset.</p>
+<p>Here is what I did:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    A[Langsmith Traces] --&gt; B[Google Docs Annotation]
+    B --&gt; C[Langsmith Dataset]
+    
+    style A fill:#1C3C3C,color:#fff
+    style B fill:#4688F4,color:#fff
+    style C fill:#1C3C3C,color:#fff
+    linkStyle default stroke:#333,stroke-width:2px
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>Collect real inputs from Langsmith traces</li>
+<li>Get stakeholders to annotate them in Google Docs</li>
+<li>Convert annotations into a Langsmith dataset</li>
+</ol>
+<section id="why-langsmith-traces" class="level2">
+<h2 class="anchored" data-anchor-id="why-langsmith-traces">Why Langsmith traces?</h2>
+<p>I had pushed to collect traces from the very beginning, the traces logged in Langsmith. I did not need to create LLM inputs, a few of us were testing the application, we had examples already existing from our tests. In addition, we are familiar with the data that is used as we are the ones who created it. So I could collect them from Langsmith, sort them and turn them into a meaningful format.</p>
 </section>
-<section id="step-by-step" class="level2">
-<h2 class="anchored" data-anchor-id="step-by-step">Step by step</h2>
-<p><strong>1. Create Instance</strong> <em>from Infomaniak - Horizon websites</em></p>
+<section id="why-google-docs" class="level2">
+<h2 class="anchored" data-anchor-id="why-google-docs">Why Google Docs?</h2>
+<p>For annotation, I thought the easiest would be to have a document where stakeholders could use the highlighting tool to show what is the relevant information. That’s it. This is a familiar workflow, get a document, highlight. Stakeholder time is very scarce, “You have 10 minutes? I’ll take it — highlight 5 texts for me.” I was trying to minimise overhead e.g.&nbsp;avoid deploying a stand-alone app, sharing access, data, etc. I want annotation — I don’t want to build an app. We are using Google Drive, it was natural to be sharing a folder with docs to be annotated, one doc per input. They can read, highlight, change the name to done or move the file.</p>
+<p>Here’s the full workflow. I used Code Claude with Langsmith SDK and Google Workspace CLI for every step except the annotation itself.</p>
+<section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data preparation:</h3>
+<ol type="1">
+<li>Download traces from Langsmith</li>
+<li>Filter the traces</li>
+<li>Extract the information - inputs from the traces</li>
+<li>Create a docx</li>
+<li>Upload to Google Drive</li>
+</ol>
+</section>
+<section id="annotation" class="level3">
+<h3 class="anchored" data-anchor-id="annotation">Annotation:</h3>
+<ol start="6" type="1">
+<li><em>Stakeholders are annotating</em> – Manual step</li>
+</ol>
+</section>
+<section id="building-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="building-the-dataset">Building the dataset:</h3>
+<ol start="7" type="1">
+<li>Download annotated files</li>
+<li>Extract the information - highlighted text from the annotated docs</li>
+<li>Create a dataset</li>
+<li>Upload the dataset to Langsmith</li>
+</ol>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
 <ul>
-<li>Choose or create Public cloud project on Infomaniak.</li>
-<li>Log in Horizon</li>
-<li>Launch an instance
-<ul>
-<li>Ubuntu 24.04 LTS</li>
-<li>a4-ram8-disk50-perf1 (or larger)</li>
-<li>Network: ext-net1</li>
-<li>Create SSH key pair, save as .pem file (example: ollama-infomaniak.pem)</li>
-</ul></li>
-<li>Note down the IP of the server (it will be referred as <code>SERVER_IP</code>)</li>
+<li>The dataset was created, from 20 annotated docs, I reduced to 12 after removing duplicates. But the pipeline has been set up for 2 weeks now, I am adding a second set of annotations to it. Small but a start.</li>
+<li>Stakeholders only had to highlight text. No creating inputs, no copying into docs, no uploading — I handled all of that through the pipeline.</li>
+<li>One surprise using Google Docs I had not thought of was to take advantage of all the features from Google Drive, in particular comments and tagging to ease communication. As it was a natural workflow for the stakeholders, they incorporated their common practice.</li>
+<li>Code Claude let me focus on the outcomes, not learning Langsmith SDK or Google Workspace CLI.</li>
 </ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Size and Network
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>a4-ram8-disk50-perf1</strong>:</p>
-<ul>
-<li>4 CPUs</li>
-<li>8 GB RAM (enough for smaller models like Llama 3.2 3B, Phi, Mistral 7B)</li>
-<li>50 GB disk space (enough for Ollama and several models)</li>
-</ul>
-<p><strong>ext-net1</strong> : this is the external network that will give your instance internet access and a public IP address (which you’ll need to connect to it and use Ollama).</p>
-</div>
-</div>
-</div>
-<p><strong>2. Configure Security</strong> <em>from Horizon website</em></p>
-<ul>
-<li><p>Add security group rules (Ingress):</p>
-<ul>
-<li>Port 22 (SSH): 0.0.0.0/0</li>
-<li>Port 11434 (Ollama): LOCAL_IP/32</li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>To find <code>LOCAL_IP</code> <em>from local computer</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> ifconfig.me</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<p><strong>3. Connect to Server</strong> <em>from local computer</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chmod</span> 600 ollama-infomaniak.pem</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> <span class="at">-i</span> ollama-infomaniak.pem ubuntu@SERVER_IP</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Bash explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>chmod 600 ollama-infomaniak.pem:</strong></p>
-<ul>
-<li><code>chmod</code> changes file permissions (who can read/write/execute a file)</li>
-<li><code>600</code> means only YOU can read and write the file, nobody else can access it</li>
-<li>SSH requires this for security - if your private key is too “open,” SSH will refuse to use it to protect you</li>
-</ul>
-<p><strong>ssh -i /path/to/ollama-infomaniak.pem ubuntu@SERVER_IP:</strong></p>
-<ul>
-<li><code>ssh</code> is the command to connect securely to a remote server</li>
-<li><code>-i</code> tells SSH which identity/key file to use for authentication</li>
-<li><code>ubuntu</code> is the username on the remote server (Ubuntu images typically use “ubuntu” as the default user)</li>
-<li><code>@SERVER_IP</code> is the IP address of your server</li>
-</ul>
-</div>
-</div>
-</div>
-<p><strong>4. Install Ollama</strong> <em>from server</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-fsSL</span> https://ollama.com/install.sh <span class="kw">|</span> <span class="fu">sh</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>5. Configure Remote Access</strong> <em>from server</em></p>
-<ul>
-<li>Set up remote access so only you can access</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl edit ollama</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Add:</p>
-<pre><code>[Service]
-Environment="OLLAMA_HOST=0.0.0.0:11434"</code></pre>
-<ul>
-<li>And re-load the config</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl daemon-reload</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Re-start the server</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> systemctl restart ollama</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Nano commands
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Ctrl+O</strong> (to save)</li>
-<li><strong>Enter</strong> (to confirm)</li>
-<li><strong>Ctrl+X</strong> (to exit)</li>
-</ul>
-</div>
-</div>
-</div>
-<p><strong>6. Test Connection</strong> <em>from local computer</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> http://SERVER_IP:11434</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><strong>7. Use in Python</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ollama</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> ollama.Client(host<span class="op">=</span><span class="st">'http://SERVER_IP:11434'</span>)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For conversations with memory</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> []</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>messages.append({<span class="st">'role'</span>: <span class="st">'user'</span>, <span class="st">'content'</span>: <span class="st">'Hello'</span>})</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.chat(model<span class="op">=</span><span class="st">'llama3.2'</span>, messages<span class="op">=</span>messages)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>messages.append({<span class="st">'role'</span>: <span class="st">'assistant'</span>, <span class="st">'content'</span>: response[<span class="st">'message'</span>][<span class="st">'content'</span>]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Install your model on the server
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>You need to install the model you are using in the server or you will get an error.</p>
-</div>
-</div>
-</div>
-<p><strong>8. Stop Instance When Done</strong> <em>on Horizon website</em></p>
-<p>If you want to stop the instance:</p>
-<ul>
-<li>Find your instance</li>
-<li>Click “Shut off instance”</li>
-</ul>
-<p><em>Note: IP may change when you restart it</em></p>
+</section>
+<section id="what-made-it-work" class="level2">
+<h2 class="anchored" data-anchor-id="what-made-it-work">What made it work</h2>
+<ol type="1">
+<li>Collecting traces from the beginning. Without them, I’d have had to create test inputs from scratch — but we already had real ones.</li>
+<li>Meet people where they are: using Google Drive meant zero onboarding — stakeholders already knew the tool and the workflow. No need to develop a new app.</li>
+<li>Iterative process: I started step by step, with one doc. I was able to review each step. Repeat with a couple, and then a batch.</li>
+<li>Team scaffolding: while I focused on creating the dataset, it is just a piece in our journey. It would not have been possible without the team work, i.e.&nbsp;the dev team to build the app and the stakeholders to be involved.</li>
+</ol>
+<p>The dataset is only one piece of the evaluation framework. On its own it’s not enough — indicators and evaluators are the next step.</p>
 
 
 </section>
