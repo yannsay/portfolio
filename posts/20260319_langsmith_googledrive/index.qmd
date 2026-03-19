@@ -8,6 +8,8 @@ description: "How I built an LLM evaluation dataset by combining Langsmith trace
 image: langsmith_googledrive.png
 ---
 
+> *Disclosure: This post was written with the help of SolveitAI (Claude) for structuring and editing.*
+
 Our dev team shipped a working prototype fast. But stakeholders aren't satisfied — the LLM isn't producing meaningful output. I believe we need an evaluation framework, i.e. three things: a dataset that reflects what stakeholders expect, indicators that define "good," and a pipeline to measure whether changes help or hurt. This post focuses on the first — how I created the dataset.
 
 Here is what I did:
